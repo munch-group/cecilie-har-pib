@@ -5,8 +5,8 @@ Template initialization script for Python library projects.
 This script:
 1. Gets the repository name from git
 2. Converts dashes to underscores to create a valid Python module name
-3. Replaces all instances of "munch-group-template" with the module name
-4. Renames the src/munch_group_template directory to src/{modulename}
+3. Replaces all instances of "cecilie_har_pib" with the module name
+4. Renames the src/cecilie_har_pib directory to src/{modulename}
 
 Usage:
     python template_init.py [--dry-run]
@@ -90,7 +90,7 @@ def get_files_to_process():
     exclude_dirs = {
         '.git', '.pixi', '__pycache__', '.pytest_cache', 
         'node_modules', '.venv', 'venv', 'env', '.scripts',
-        'munch_group_template.egg-info'
+        'cecilie_har_pib.egg-info'
     }
     exclude_extensions = {
         '.pyc', '.pyo', '.so', '.dylib', '.dll', '.exe',
@@ -153,8 +153,8 @@ def main():
     print(f"Repository name: {repo_name}")
     print(f"Module name: {module_name}")
     
-    # if module_name == "munch_group_template":
-    #     print("Module name is already 'munch_group_template', no changes needed.")
+    # if module_name == "cecilie_har_pib":
+    #     print("Module name is already 'cecilie_har_pib', no changes needed.")
     #     return
     
     # Get all files to process
@@ -166,11 +166,11 @@ def main():
     # Replace text in files
     files_changed = 0
     for file_path in files_to_process:
-        if find_and_replace_in_file(file_path, "munch-group-template", repo_name, args.dry_run):
+        if find_and_replace_in_file(file_path, "cecilie_har_pib", repo_name, args.dry_run):
             files_changed += 1
             status = "Would update" if args.dry_run else "✓"
             print(f"  {status} {file_path}")
-        if find_and_replace_in_file(file_path, "munch_group_template", module_name, args.dry_run):
+        if find_and_replace_in_file(file_path, "cecilie_har_pib", module_name, args.dry_run):
             files_changed += 1
             status = "Would update" if args.dry_run else "✓"
             print(f"  {status} {file_path}")
@@ -179,7 +179,7 @@ def main():
     print(f"\n{result} {files_changed} files")
     
     # Rename the source directory
-    if rename_directory("munch_group_template", module_name, args.dry_run):
+    if rename_directory("cecilie_har_pib", module_name, args.dry_run):
         status = "Would rename" if args.dry_run else "✓ Renamed"
         print(f"{status} source directory")
     
