@@ -154,7 +154,7 @@ def main():
     print(f"Module name: {module_name}")
     
     # if module_name == "cecilie_har_pib":
-    #     print("Module name is already 'cecilie_har_pib', no changes needed.")
+    #     print("Module name is already 'cecilie-har-pib', no changes needed.")
     #     return
     
     # Get all files to process
@@ -166,7 +166,7 @@ def main():
     # Replace text in files
     files_changed = 0
     for file_path in files_to_process:
-        if find_and_replace_in_file(file_path, "cecilie_har_pib", repo_name, args.dry_run):
+        if find_and_replace_in_file(file_path, "cecilie-har-pib", repo_name, args.dry_run):
             files_changed += 1
             status = "Would update" if args.dry_run else "✓"
             print(f"  {status} {file_path}")

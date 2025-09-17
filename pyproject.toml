@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "cecilie_har_pib"
+name = "cecilie-har-pib"
 version = "0.1.1.rc1"
 description = "Project description"
 authors = [
@@ -27,9 +27,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/munch-group/cecilie_har_pib"
-Repository = "https://github.com/munch-group/cecilie_har_pib"
-Documentation = "https://munch-group.org/cecilie_har_pib"
+Homepage = "https://github.com/munch-group/cecilie-har-pib"
+Repository = "https://github.com/munch-group/cecilie-har-pib"
+Documentation = "https://munch-group.org/cecilie-har-pib"
 
 [project.scripts]
 cecilie_har_pib = "cecilie_har_pib:cecilie_har_pib"
@@ -86,6 +86,9 @@ description = "Initialize template and remove project-specific files"
 
 [tool.pixi.tasks.install-claude]
 cmd = "npm install -g @anthropic-ai/claude-code"
+
+[tool.pixi.tasks.github-ssh-key]
+cmd = "pixi add git gh && ./.scripts/github-ssh-key.sh"
 
 [tool.pixi.tasks.claude]
 cmd = "bash ./.scripts/claude-session.sh {{ '--new' if 'new' in new }}"
